@@ -2,9 +2,13 @@ local lang_utils = require('treesj.langs.utils')
 local js = require('treesj.langs.javascript')
 
 return lang_utils.merge_preset(js, {
-  object_type = lang_utils.set_preset_for_dict({
-    both = { separator = ';', last_separator = true },
-  }),
+  object_type = lang_utils.set_default_preset({
+    both = { separator = '' },
+    join = { space_in_brackets = true },
+    }),
+  -- object_type = lang_utils.set_preset_for_dict({
+  --   both = { separator = ';', last_separator = true },
+  -- }),
   object_pattern = lang_utils.set_preset_for_dict(),
   tuple_type = lang_utils.set_preset_for_dict(),
   enum_body = lang_utils.set_preset_for_dict(),

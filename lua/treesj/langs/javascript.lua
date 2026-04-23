@@ -33,12 +33,38 @@ return {
   }),
   array = lang_utils.set_preset_for_list({
     split = { recursive_ignore = rec_ignore },
+    join = { space_in_brackets = false }
   }),
   array_pattern = lang_utils.set_preset_for_list({
     split = { recursive_ignore = rec_ignore },
   }),
-  formal_parameters = lang_utils.set_preset_for_args(),
-  arguments = lang_utils.set_preset_for_args(),
+
+  formal_parameters = lang_utils.set_default_preset({
+    both = {
+      separator = ',',
+    },
+    split = {
+      last_separator = true,
+    },
+    join = {
+      last_separator = false,
+    },
+  }),
+  arguments = lang_utils.set_default_preset({
+    both = {
+      separator = ',',
+    },
+    split = {
+      last_separator = true,
+    },
+    join = {
+      last_separator = false,
+    },
+  }),
+
+  -- formal_parameters = lang_utils.set_preset_for_args(),
+  -- arguments = lang_utils.set_preset_for_args(),
+
   named_imports = lang_utils.set_preset_for_dict(),
   export_clause = lang_utils.set_preset_for_dict(),
   statement_block = lang_utils.set_preset_for_statement({
